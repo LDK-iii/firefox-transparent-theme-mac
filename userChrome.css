@@ -1,10 +1,10 @@
 #nav-bar {
   background: transparent !important;
-  margin-top: -33px !important;
+  margin-top: -36px !important;
   margin-right: 50vw !important;
-  height: 33px !important;
+  height: 36px !important;
   padding-top: 1px !important;
-  padding-left: 70px !important;
+  padding-left: 80px !important;
   font-size: 10px !important;
 }
 
@@ -17,18 +17,41 @@
   padding-top: 0px !important;
 }
 
+.titlebar-buttonbox-container {
+  display: block !important;
+  position: fixed !important;
+  left: 0px !important;
+  margin-top: 9px !important;
+}
+
 :root[uidensity="compact"] #urlbar, :root[uidensity="compact"] #searchbar {
-  min-height: 24px !important;
+  min-height: 10px !important;
+}
+
+:root[uidensity="compact"] toolbarbutton.bookmark-item:not(.subviewbutton) {
+  padding: 1px 7px !important;
+}
+
+.bookmark-item > .toolbarbutton-icon {
+  display: none !important;
+}
+
+#urlbar-container, #search-container {
+  padding-block: 5px !important;
+}
+
+#urlbar-container {
+  min-width: calc(150px + 24px + 2 * var(--toolbarbutton-inner-padding)) !important;
 }
 
 #TabsToolbar {
   margin-left: 50vw !important;
-  height: 33px !important;
+  height: 36px !important;
   padding-top: 1px !important;
 }
 
 #tabbrowser-tabs {
-  height: 33px !important;
+  height: 36px !important;
 }
 
 .tabbrowser-tab::before, .tabbrowser-tab::after {
@@ -45,10 +68,10 @@
 }
 
 .tab-background {
-  margin: 4px 2px 4px 2px !important;
+  margin: 5px 3px !important;
   border-radius: var(--toolbarbutton-border-radius) !important;
   background-image: none !important;
-  background-color: rgba(249, 249, 250, 0.05) !important;
+  background-color: rgba(0, 0, 0, 0.15) !important;
 }
 
 #tabbrowser-tabs:not([movingtab]) > .tabbrowser-arrowscrollbox > 
@@ -59,14 +82,7 @@
 .tab-background[selected="true"]:-moz-lwtheme,
 .tabbrowser-tab:hover > .tab-stack > 
 .tab-background:not([selected="true"]):not([multiselected]) {
-  background-color: rgba(249, 249, 250, 0.15) !important;
-}
-
-.titlebar-buttonbox-container {
-  display: block !important;
-  position: fixed !important;
-  left: 0px !important;
-  margin-top: -3px !important;
+  background-color: rgba(0, 0, 0, 0.3) !important;
 }
 
 .titlebar-spacer[type="pre-tabs"], .titlebar-spacer[type="post-tabs"] {
@@ -87,7 +103,7 @@
 }
 
 #urlbar {
-  background-color: rgba(249, 249, 250, 0.15) !important;
+  background-color: rgba(0, 0, 0, 0.3) !important;
   border: none !important;
 }
 
