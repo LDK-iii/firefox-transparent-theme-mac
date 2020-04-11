@@ -21,7 +21,7 @@
   display: block !important;
   position: fixed !important;
   left: 0px !important;
-  margin-top: 9px !important;
+  margin-top: 10px !important;
 }
 
 :root[uidensity="compact"] #urlbar, :root[uidensity="compact"] #searchbar {
@@ -72,6 +72,7 @@
   border-radius: var(--toolbarbutton-border-radius) !important;
   background-image: none !important;
   background-color: rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1) !important;
 }
 
 #tabbrowser-tabs:not([movingtab]) > .tabbrowser-arrowscrollbox > 
@@ -102,11 +103,33 @@
   --toolbar-field-focus-border-color: none !important;
 }
 
-#urlbar {
+#urlbar:not(.megabar):-moz-lwtheme, 
+#urlbar.megabar:-moz-lwtheme > #urlbar-background, 
+#navigator-toolbox #searchbar:-moz-lwtheme {
   background-color: rgba(0, 0, 0, 0.3) !important;
   border: none !important;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1) !important;
 }
 
-#TabsToolbar, #nav-bar, #PersonalToolbar {
+#urlbar[breakout] {
+  --urlbar-height: 25px !important;
+  --urlbar-toolbar-height: 35px !important;
+}
+
+#urlbar[breakout][breakout-extend] > #urlbar-input-container,
+#urlbar-input-container {
+  height: var(--urlbar-height) !important;
+  padding-block: 0px !important;
+  padding-inline: 0px !important;
+  transition: none !important;
+}
+
+#urlbar[breakout][breakout-extend] {
+  top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+  left: 0 !important;
+  width: 100% !important;
+}
+
+#TabsToolbar, #nav-bar, #PersonalToolbar, #urlbar {
   -moz-appearance: -moz-mac-vibrancy-dark !important;
 }
