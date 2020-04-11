@@ -1,5 +1,5 @@
 #nav-bar {
-  height: 34px !important;
+  height: 36px !important;
   padding: 0px 4px 2px 4px !important;
   margin-top: -1px !important;
 }
@@ -9,7 +9,7 @@
 }
 
 :root[sizemode="fullscreen"] #TabsToolbar {
-  padding: 2px 4px 0px 4px !important;
+  padding: 2px 4px 0px 2px !important;
 }
 
 #tabbrowser-tabs {
@@ -54,7 +54,8 @@
   margin: 3px 3px 3px 3px !important;
   border-radius: var(--toolbarbutton-border-radius) !important;
   background-image: none !important;
-  background-color: rgba(249, 249, 250, 0.05) !important;
+  background-color: rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1) !important;
 }
 
 #tabbrowser-tabs:not([movingtab]) > .tabbrowser-arrowscrollbox > 
@@ -65,14 +66,36 @@
 .tab-background[selected="true"]:-moz-lwtheme,
 .tabbrowser-tab:hover > .tab-stack > 
 .tab-background:not([selected="true"]):not([multiselected]) {
-  background-color: rgba(249, 249, 250, 0.15) !important;
+  background-color: rgba(0, 0, 0, 0.3) !important;
 }
 
-#urlbar {
-  background-color: rgba(249, 249, 250, 0.15) !important;
+#urlbar:not(.megabar):-moz-lwtheme, 
+#urlbar.megabar:-moz-lwtheme > #urlbar-background, 
+#navigator-toolbox #searchbar:-moz-lwtheme {
+  background-color: rgba(0, 0, 0, 0.3) !important;
   border: none !important;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1) !important;
 }
 
-#TabsToolbar, #nav-bar, #PersonalToolbar {
+#urlbar[breakout] {
+  --urlbar-height: 28px !important;
+  --urlbar-toolbar-height: 34px !important;
+}
+
+#urlbar[breakout][breakout-extend] > #urlbar-input-container,
+#urlbar-input-container {
+  height: var(--urlbar-height) !important;
+  padding-block: 0px !important;
+  padding-inline: 0px !important;
+  transition: none !important;
+}
+
+#urlbar[breakout][breakout-extend] {
+  top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+  left: 0 !important;
+  width: 100% !important;
+}
+
+#TabsToolbar, #nav-bar, #PersonalToolbar, #urlbar {
   -moz-appearance: -moz-mac-vibrancy-dark !important;
 }
