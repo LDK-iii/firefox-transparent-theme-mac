@@ -65,11 +65,11 @@
 .tab-background[selected="true"]:-moz-lwtheme,
 .tabbrowser-tab:hover > .tab-stack > 
 .tab-background:not([selected="true"]):not([multiselected]) {
-  background-color: rgba(255,255,255,0.15) !important;
+  background-color: rgba(255,255,255,0.1) !important;
 }
 
 #urlbar-background {
-  background-color: rgba(255,255,255,0.15) !important;
+  background-color: rgba(255,255,255,0.1) !important;
   border: none !important;
   box-shadow: 0 0 5px rgba(0,0,0,0.2) !important;
 }
